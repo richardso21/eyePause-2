@@ -12,7 +12,7 @@ const path = require("path");
 const { useSkip, refillSkips } = require("./js/timeStore");
 
 // allow for hot-reloading during development
-require("electron-reload")(__dirname);
+// require("electron-reload")(__dirname);
 
 // allows app to hide when closed
 let confirmQuit = false;
