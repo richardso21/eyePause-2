@@ -1,0 +1,42 @@
+@keyframes dim {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+  background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+body {
+  animation: dim 2s forwards;
+}
+
+p {
+  position: absolute;
+  font-size: 2rem;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.timer {
+  position: absolute;
+  font-size: 10rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.skip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #379392;
+  border-radius: 5px;
+  color: #379392;
+  font-size: 1.75rem;
+  font-family: "Work Sans";
+  left: 50%;
+  bottom: 35%;
+  transform: translate(-50%, -50%);
+}
