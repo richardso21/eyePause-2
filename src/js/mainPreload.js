@@ -18,6 +18,19 @@ intTimer.on("targetAchieved", () => {
   ipcRenderer.invoke("startBreak");
 });
 
+// send break reminder notifications
+intTimer.on("minutesUpdated", () => {
+  const minute = intTimer.getTimeValues().minutes;
+  if ([9, 4, 0].includes(minute))
+    ipcRenderer.invoke(
+      "alert",
+      "Break Reminder",
+      `You have ${minute + 1} minute${
+        minute != 0 ? "s" : ""
+      } left before your break!`
+    );
+});
+
 // start timer after break is done
 ipcRenderer.on("startNewCycle", () => restartTimer());
 
