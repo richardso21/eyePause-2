@@ -2,7 +2,7 @@
   "name": "eyepause2",
   "productName": "eyepause2",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Take periodic rests from your computer screen with eyePause!",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -19,12 +19,16 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./src/assets/eyes.icns"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "eyepause2"
+            "name": "eyepause2",
+            "setupIcon": "./src/assets/eyes.ico",
+            "iconUrl": "https://dl.dropboxusercontent.com/s/p7tt7wlwfsfi9d9/eyes.ico"
           }
         },
         {
