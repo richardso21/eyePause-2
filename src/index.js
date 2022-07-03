@@ -31,7 +31,9 @@ function getIcon() {
 }
 
 // hide icon from dock if macOS
-app.dock.hide();
+if (process.platform === "darwin") {
+  app.dock.hide();
+}
 
 // Create the browser window.
 let mainWindow = null;
@@ -98,7 +100,7 @@ const createBreakWindow = () => {
   breakWindow.loadFile(path.join(__dirname, "views", "break.html"));
   breakWindow.show();
   // prevent close using ctrl/cmd + W
-  // breakWindow.setMenu(null);
+  breakWindow.setMenu(null);
   // send breakDone signal on window close
   breakWindow.on("close", () => {
     mainWindow.webContents.send("startNewCycle");
